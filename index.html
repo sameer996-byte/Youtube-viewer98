@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Proxy Search</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; background: #f7f7f7; }
+    input[type="text"] { padding: 10px; width: 300px; font-size: 16px; }
+    button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>YouTube Proxy Search</h1>
+  <p>Search YouTube using a privacy-friendly proxy frontend</p>
+  <input type="text" id="query" placeholder="Search YouTube...">
+  <button onclick="searchVideo()">Search</button>
+
+  <script>
+    function searchVideo() {
+      const query = document.getElementById("query").value.trim();
+      if (query) {
+        const encoded = encodeURIComponent(query);
+        // Change domain here if needed
+        window.location.href = `https://piped.video/results?search_query=${encoded}`;
+      }
+    }
+  </script>
+</body>
+</html>
